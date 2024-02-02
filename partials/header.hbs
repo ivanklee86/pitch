@@ -1,0 +1,136 @@
+<header class="gh-header header-{{#match @custom.header_type "Logo on the left"}}left-logo{{else match
+    @custom.header_type "Author on the left" }}left-logo{{else match @custom.header_type "Logo in the middle"
+    }}middle-logo{{else match @custom.header_type "Author in the middle" }}middle-logo{{else match
+    @custom.header_type "Logo with social icons" }}include-social-icons{{else match
+    @custom.header_type "Author with social icons" }}include-social-icons{{else match
+    @custom.header_type "Mobile menu with logo" }}mobile-menu{{else match @custom.header_type "Mobile menu with author"
+    }}mobile-menu{{else match @custom.header_type "Mobile menu with logo and icons" }}mobile-menu-icons{{else match
+    @custom.header_type "Mobile menu with author and icons" }}mobile-menu-icons{{else match
+    @custom.header_type "Logo with bottom navigation" }}bottom-nav{{else match
+    @custom.header_type "Author with bottom navigation" }}bottom-nav{{/match}}{{#is 'post' }}{{#post}}{{#if featured}}
+    transparent fixed{{/if}}{{/post}}{{/is}}{{#is 'page' }}{{#page}}{{#if featured}}{{#if feature_image}}{{#match @page.show_title_and_feature_image}}
+    transparent fixed{{/match}}{{/if}}{{/if}}{{/page}}{{/is}}{{#is 'home' }}{{#match @custom.featured_posts "Large Slider" }} transparent
+    fixed{{/match}}{{/is}}" id="gh-header">
+    <div class="gh-header-container gh-container">
+        {{#match @custom.header_type "Logo with bottom navigation" }}
+        <div class="gh-header-socials">
+            {{>socials}}
+        </div>
+        {{else match @custom.header_type "Author with bottom navigation" }}
+        <div class="gh-header-socials">
+            {{>socials}}
+        </div>
+        {{/match}}
+        <div class="gh-header-brand-wrapper">
+            <button class="gh-burger-btn" aria-label="{{t "Mobile menu button"}}">
+                {{>icons/burger-icon}}
+            </button>
+            <div class="gh-header-brand">
+                {{#match @custom.header_type "Author on the left"}}
+                {{>header-author}}
+                {{else match @custom.header_type "Author in the middle"}}
+                {{>header-author}}
+                {{else match @custom.header_type "Author with social icons"}}
+                {{>header-author}}
+                {{else match @custom.header_type "Mobile menu with author and icons"}}
+                {{>header-author}}
+                {{else match @custom.header_type "Mobile menu with author"}}
+                {{>header-author}}
+                {{else match @custom.header_type "Author with bottom navigation"}}
+                {{>header-author}}
+                {{else}}
+                <a class="gh-site-logo {{#if @custom.dark_mode_logo}}gh-site-logo-has-DM-logo{{/if}}"
+                    href="{{@site.url}}" aria-label="{{@site.title}} {{t "logo and home page link"}}">
+                    {{#if @site.logo}}
+                    <img src="{{img_url @site.logo}}" alt="{{@site.title}} {{t "icon"}}" class="gh-site-logo-img">
+                    {{#if @custom.dark_mode_logo}}
+                    <img src="{{img_url @custom.dark_mode_logo}}" alt="{{@site.title}} {{t "icon"}}"
+                        class="gh-site-logo-img-dark-mode">
+                    {{/if}}
+                    {{else}}
+                    <span class="gh-site-title">{{@site.title}}</span>
+                    {{/if}}
+                </a>
+                {{/match}}
+            </div>
+            {{#match @custom.header_type "Logo with social icons"}}
+            <div class="gh-header-brand-socials">
+                {{>socials}}
+            </div>
+            {{else match @custom.header_type "Author with social icons" }}
+            <div class="gh-header-brand-socials">
+                {{>socials}}
+            </div>
+            {{else match @custom.header_type "Mobile menu with logo and icons" }}
+            <div class="gh-header-brand-socials">
+                {{>socials}}
+            </div>
+            {{else match @custom.header_type "Mobile menu with author and icons" }}
+            <div class="gh-header-brand-socials">
+                {{>socials}}
+            </div>
+            {{/match}}
+        </div>
+        {{^match @custom.header_type "Logo with bottom navigation" }}
+        {{^match @custom.header_type "Author with bottom navigation" }}
+        <nav class="gh-header-navigation-wrapper">
+            {{navigation}}
+        </nav>
+        {{/match}}
+        {{/match}}
+        <div class="gh-header-actions">
+            <div class="gh-header-actions-buttons">
+                <button class="gh-dark-mode-toggle-btn" aria-label="{{t "Dark mode toggle button"}}">
+                    {{>icons/sun}}
+                    {{>icons/moon}}
+                </button>
+                <button class="gh-search-btn" title="{{t "Search button"}}" aria-label="{{t "Search button"}}" data-ghost-search>
+                    {{>icons/search}}
+                </button>
+            </div>
+            {{#if @site.members_enabled}}
+            {{#if @member}}
+            <a class="gh-main-button gh-member-button" href="{{@site.url}}/account" aria-label="{{t "Account page link"}}">
+                {{t "My Account"}}
+            </a>
+            {{else}}
+            <a class="gh-main-button gh-member-button" href="{{@site.url}}/signup" aria-label="{{t "Sign up button"}}">
+                {{t "Sign Up"}}
+            </a>
+            {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    {{#match @custom.header_type "Logo with bottom navigation" }}
+    <div class="gh-header-bottom gh-container">
+        <div class="gh-header-bottom-navigation">
+            {{navigation}}
+        </div>
+        <div class="gh-header-bottom-actions">
+            <button class="gh-dark-mode-toggle-btn" aria-label="{{t "Dark mode toggle button"}}">
+                {{>icons/sun}}
+                {{>icons/moon}}
+            </button>
+            <button class="gh-search-btn" title="{{t "Search button"}}" aria-label="{{t "Search button"}}" data-ghost-search>
+                {{> "icons/search"}}
+            </button>
+        </div>
+    </div>
+    {{else match @custom.header_type "Author with bottom navigation" }}
+    <div class="gh-header-bottom gh-container">
+        <div class="gh-header-bottom-navigation">
+            {{navigation}}
+        </div>
+        <div class="gh-header-bottom-actions">
+            <button class="gh-dark-mode-toggle-btn" aria-label="{{t "Dark mode toggle button"}}">
+                {{>icons/sun}}
+                {{>icons/moon}}
+            </button>
+            <button class="gh-search-btn" title="Search button" aria-label="{{t "Search button"}}" data-ghost-search>
+                {{> "icons/search"}}
+            </button>
+        </div>
+    </div>
+    {{/match}}
+    {{> "mobile-menu"}}
+</header>

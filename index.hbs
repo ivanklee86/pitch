@@ -1,0 +1,22 @@
+{{!< default}} 
+
+<main class="gh-main">
+    {{^match @custom.featured_posts "None" }}
+    {{^match @custom.featured_posts "Small Slider"}}
+    {{>featured-posts}}
+    {{/match}}
+    {{/match}}
+    <div class="gh-home-page-main gh-container{{#if @custom.homepage_sidebar}} with-sidebar{{/if}}">
+        {{#match @custom.featured_posts "Small Slider"}}
+        <div class="gh-home-page-slider-posts-wrapper">
+            {{>featured-posts}}
+            {{>posts-layout}}
+        </div>
+        {{else}}
+        {{>posts-layout}}
+        {{/match}}
+        {{#if @custom.homepage_sidebar }}
+        {{>sidebar}}
+        {{/if}}
+    </div>
+</main>

@@ -1,0 +1,210 @@
+.gh-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Footer Subscribe Section */
+/* --------------------------------------------------------------- */
+
+.gh-footer-subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--footer-subscribe-bg);
+}
+
+.gh-footer-cta-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(60%);
+}
+
+.gh-footer-subscribe-content {
+    padding-top: 88px;
+    padding-bottom: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.gh-footer-subscribe-cta-text {
+    font-size: 40px;
+    text-align: center;
+    font-weight: var(--font-weight-card-headings);
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-big);
+}
+
+.gh-footer-subscribe.with-image .gh-footer-subscribe-cta-text {
+    color: #FFF;
+}
+
+.gh-footer-subscribe-cta-subtext {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.gh-footer-subscribe.with-image .gh-footer-subscribe-cta-subtext {
+    color: #FFF;
+}
+
+.gh-main-button.gh-footer-cta-btn {
+    margin-top: 24px;
+}
+
+.gh-footer-subscribe.with-image .gh-main-button.gh-footer-cta-btn {
+    color: #000;
+    background-color: #EDEDED;
+}
+
+.gh-footer-subscribe.with-image .gh-main-button.gh-footer-cta-btn:hover {
+    color: #EDEDED;
+    background-color: var(--ghost-accent-color);
+}
+
+:root[data-color-scheme="dark"] .gh-main-button.gh-footer-cta-btn {
+    background-color: #000;
+}
+
+:root[data-color-scheme="dark"] .gh-main-button.gh-footer-cta-btn:hover {
+    background-color: var(--ghost-accent-color);
+}
+
+:root[data-color-scheme="dark"] .gh-footer-subscribe.with-image .gh-main-button.gh-footer-cta-btn {
+    color: #000;
+    background-color: #EDEDED;
+}
+
+:root[data-color-scheme="dark"] .gh-footer-subscribe.with-image .gh-main-button.gh-footer-cta-btn:hover {
+    color: #EDEDED;
+    background-color: var(--ghost-accent-color);
+}
+
+/* Footer Main Section */
+/* --------------------------------------------------------------- */
+
+.gh-footer-main {
+    background-color: var(--footer-main-bg);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gh-footer-main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-top: 64px;
+    padding-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.gh-footer-main-site-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gh-footer-site-desc {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+.gh-footer-copyright {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--footer-border-color);
+}
+
+.gh-footer-copyright-text {
+    color: var(--footer-copyright-text);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.gh-footer-copyright-link {
+    color: var(--footer-copyright-text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.gh-footer-copyright-link:hover {
+    color: var(--ghost-accent-color);
+}
+
+/* Secondary Navigation */
+/* --------------------------------------------------------------- */
+
+.gh-footer-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 40%;
+}
+
+.gh-secondary-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 32px;
+    row-gap: 20px;
+}
+
+.gh-secondary-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gh-secondary-nav-link {
+    font-family: var(--font-family-navigation);
+    font-size: var(--font-size-navigation);
+    letter-spacing: var(--letter-spacing-small);
+    line-height: var(--line-height-navigation);
+    font-weight: var(--font-weight-navigation);
+    text-transform: var(--text-transfrom-navigation);
+    height: 100%;
+    position: relative;
+    min-width: max-content;
+}
+
+.gh-secondary-nav-link::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--ghost-accent-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.gh-secondary-nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

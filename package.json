@@ -1,0 +1,182 @@
+{
+  "name": "pitch",
+  "description": "A Ghost theme that redefines web design merging aesthetics and functionality into an immersive digital experience.",
+  "demo": "https://pitch-lifestyle.highfivethemes.com",
+  "version": "1.0.13",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/Pitch_desktop_screenshot.webp",
+    "mobile": "assets/Pitch_mobile_screenshot.webp"
+  },
+  "scripts": {
+    "dev": "rollup -c --environment BUILD:development -w",
+    "build": "rollup -c --environment BUILD:production",
+    "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json rollup.config.js",
+    "test": "npx gscan .",
+    "pretest": "npm run build"
+  },
+  "author": {
+    "name": "HighFiveThemes",
+    "email": "hello@highfivethemes.com",
+    "url": "https://highfivethemes.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Beautiful",
+      "Clean",
+      "Minimal",
+      "Blog"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "bestzip": "^2.2.1",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^8.0.1",
+    "rollup": "^3.18.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "card_assets": true,
+    "posts_per_page": 12,
+    "image_sizes": {
+      "100": {
+        "width": 100
+      },
+      "200": {
+        "width": 200
+      },
+      "300": {
+        "width": 300
+      },
+      "500": {
+        "width": 500
+      },
+      "600": {
+        "width": 600
+      },
+      "800": {
+        "width": 800
+      },
+      "1000": {
+        "width": 1000
+      },
+      "1200": {
+        "width": 1200
+      },
+      "1600": {
+        "width": 1600
+      },
+      "2000": {
+        "width": 2000
+      },
+      "2400": {
+        "width": 2400
+      },
+      "3000": {
+        "width": 3000
+      }
+    },
+    "custom": {
+      "header_type": {
+        "type": "select",
+        "options": [
+          "Logo on the left",
+          "Author on the left",
+          "Logo in the middle",
+          "Author in the middle",
+          "Logo with social icons",
+          "Author with social icons",
+          "Logo with bottom navigation",
+          "Author with bottom navigation",
+          "Mobile menu with logo",
+          "Mobile menu with author",
+          "Mobile menu with logo and icons",
+          "Mobile menu with author and icons"
+        ],
+        "default": "Logo on the left"
+      },
+      "dark_mode_logo": {
+        "type": "image"
+      },
+      "typography": {
+        "type": "select",
+        "options": [
+          "Inter",
+          "Manrope/Archivo",
+          "Manrope/DMSans",
+          "PlayfairDisplay/Manrope",
+          "InstrumentSans/DMSans",
+          "Epilogue/Manrope"
+        ],
+        "default": "Inter"
+      },
+      "border_radius": {
+        "type": "select",
+        "options": [
+          "Rounded",
+          "Slightly rounded",
+          "Squared"
+        ],
+        "default": "Rounded"
+      },
+      "featured_posts": {
+        "type": "select",
+        "group": "homepage",
+        "options": [
+          "Medium Slider",
+          "Large Slider",
+          "Small Slider",
+          "Tiles",
+          "Fullscreen Tiles",
+          "None"
+        ],
+        "default": "Medium Slider"
+      },
+      "archive_type": {
+        "type": "select",
+        "options": [
+          "List",
+          "Grid",
+          "Timeline"
+        ],
+        "default": "Grid"
+      },
+      "html_widget": {
+        "type": "text"
+      },
+      "homepage_sidebar": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage"
+      },
+      "cta_text_for_subscription_section": {
+        "type": "text",
+        "default": "Subscribe to New Posts"
+      },
+      "cta_subtext_for_subscription_section": {
+        "type": "text",
+        "default": "Lorem ultrices malesuada sapien amet pulvinar quis. Feugiat etiam ullamcorper pharetra vitae nibh enim vel."
+      }
+    }
+  },
+  "type": "module"
+}
